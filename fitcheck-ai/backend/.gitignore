@@ -1,0 +1,4 @@
+backend/venv/
+backend/uploads/
+backend/fitcheck.db
+frontend/node_modules/
