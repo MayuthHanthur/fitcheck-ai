@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const API = "http://127.0.0.1:8000";
+const API = "https://fitcheck-backend-wse3.onrender.com";
 
 function App() {
   const [items, setItems] = useState([]);
