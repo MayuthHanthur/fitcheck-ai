@@ -32,10 +32,11 @@ async def upload_item(file: UploadFile = File(...)):
     with open(filepath, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    category = classify_image(filepath)
+       category = classify_image(filepath)
     colour = get_dominant_colour(filepath)
 
-    remove_and_pad(filepath, filepath)
+    img = Image.open(filepath).convert("RGB").resize((512, 512))
+    img.save(filepath)
 
     item = ClothingItem(filename=file.filename, category=category, colour=colour)
     session.add(item)
