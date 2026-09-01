@@ -32,7 +32,7 @@ async def upload_item(file: UploadFile = File(...)):
     with open(filepath, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-       category = classify_image(filepath)
+    category = classify_image(filepath)
     colour = get_dominant_colour(filepath)
 
     img = Image.open(filepath).convert("RGB").resize((512, 512))
